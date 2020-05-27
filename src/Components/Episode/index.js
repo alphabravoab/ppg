@@ -1,11 +1,18 @@
-import React from 'react'
+import EpisodeView from './EpisodeView'
+import { connect } from 'react-redux'
+import {fetch_episode} from './episodeActions'
 
-const Episode = () => {
-    return(
-        <div>
-            episodesnp
-        </div>
-    )
+const mapStateToProps = state => {
+    return {
+        episode: state.episode || {},
+    }
 }
 
-export default Episode
+const mapDispatchToProps = dispatch => {
+    return {
+        fetch_episode:(epId) => {dispatch(fetch_episode(epId))}
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(EpisodeView)
+

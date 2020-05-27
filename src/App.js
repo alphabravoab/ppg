@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <Route exact path="/" component={ Series } />
-      <Route exact path="/episodes" component={ Episode } />
+      <Route exact path="/episode/:id" component={ Episode } />
     </div>
   );
 }
