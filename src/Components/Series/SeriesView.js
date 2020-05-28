@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react'
 import ReactHtmlParser from 'react-html-parser'
 import { useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import SelectionButton from '../SelectionButton'
+import search from '../../images/search.png'
 import './seriesView.css'
 
 const Series = ({series, episodes, fetchAllEpisodes, fetch_series}) => {
@@ -14,7 +16,10 @@ const Series = ({series, episodes, fetchAllEpisodes, fetch_series}) => {
     
     return(
         <div>
-           <div className="title">{name}</div> 
+           <div className="title">
+               <div>{name}</div>
+               <div><Link to={"/search"}><img className="searchButton" src={search} alt="search" /></Link></div>
+           </div> 
            {image && <img className="episodeImage" src={image.original} alt={name} />}
            <div className="summary">{ReactHtmlParser(summary)}</div>
            <div>

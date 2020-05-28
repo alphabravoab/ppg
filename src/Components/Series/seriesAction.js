@@ -9,7 +9,10 @@ const getseries = (show) => ({
 
 
 export const fetch_series = (showId) => dispatch => {
-    const endpoint = `shows/${showId}`
-    http_get(endpoint)
-        .then(suc => dispatch(getseries(suc.data)))
+    // When the app loads from root it doesn't have an id yet. So as long as it's undefined it shouldn't make a call.
+    if(showId !== undefined) {
+        const endpoint = `shows/${showId}`
+        http_get(endpoint)
+            .then(suc => dispatch(getseries(suc.data)))
+    }
 }

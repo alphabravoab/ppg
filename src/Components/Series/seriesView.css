@@ -1,7 +1,10 @@
 .title{
     background-color: black;
     color: white;
+    display: flex;
     padding: 10px;
+    height: 40px;
+    justify-content: space-around;
 }
 
 .list {
@@ -15,6 +18,10 @@
 .genreList {
     display: flex;
     justify-content: center;
+}
+
+.searchButton {
+    height: 20px;
 }
 
 .genre {
@@ -31,6 +38,9 @@
     }
     .list {
         width: 100%;
+    }
+    .searchButton {
+        right: 10;
     }
 }
 

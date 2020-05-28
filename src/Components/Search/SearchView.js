@@ -1,24 +1,26 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import SelectionButton from '../SelectionButton'
+import './searchView.css'
 
 const SearchView = ({searchResults, searchShows}) => {
     const { register, handleSubmit } = useForm()
 
     const onSubmit = (data) => {
+        // replace spaces with %20 for shows with space in their name.
         const searchTerm = data.showName.replace(/ /g,"%20")
         searchShows(searchTerm)
     }
     return(
         <div>
-            Search for a show:
-            <form onSubmit={handleSubmit(onSubmit)}>
+            
+            <form className="form" onSubmit={handleSubmit(onSubmit)}>
                 <input name="showName" ref={register} />
                 <button type="submit">Search</button>
-                <div>
-                    {searchResults && searchResults.map(episode=> <SelectionButton key={episode.id} episode={episode.show} link={"/series/"} />)}
-                </div>
             </form>
+            <div>
+                {searchResults && searchResults.map(episode=> <SelectionButton key={episode.id} episode={episode.show} link={"/series/"} />)}
+            </div>
         </div>
     )
 }

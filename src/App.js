@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom'
+import { Route, Redirect } from 'react-router-dom'
 import Series from './Components/Series'
 import Episode from './Components/Episode'
 import Search from './Components/Search'
@@ -13,6 +13,7 @@ function App() {
       <Route exact path="/search" component={ Search } />
       <Route exact path="/episode/:id" component={ Episode } />
       <Route exact path="/series/:id" component={ Series } />
+      <Redirect from="/" to="/series/6771" />
     </div>
   );
 }
