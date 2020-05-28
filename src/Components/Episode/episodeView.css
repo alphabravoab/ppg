@@ -1,0 +1,57 @@
+
+.episodeHeader{
+    background-color: black;
+    color: white;
+    text-align: center;
+
+}
+
+.headerBody{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.episodeImage{
+    width: 100%;
+    object-fit: cover;
+}
+
+.backButton{
+    background-color: black;
+    border: 0;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .episodeBody{
+        width: 100%;
+    }
+    .headerBody{
+        width: 100%
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    .headerBody{
+        width: 80%
+    }
+    .episodeBody{
+        width: 100%;
+    }
+}
+    
+@media only screen and (min-width: 1200px) {
+    .headerBody{
+        width: 80%
+    }
+    .episodeBody{
+        width: 100%;
+    }
+
+    .episodeImage{
+        width: 50%;
+        object-fit: cover;
+    }
+
+}

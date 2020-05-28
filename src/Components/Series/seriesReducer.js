@@ -1,16 +1,16 @@
-import { GET_SERIES, GET_EPISODES } from './seriesAction'
+import { GET_SERIES } from './seriesAction'
 
-export default (state = {}, {type, payload}) => {
+//setting an initial id of 6771 to start at power puffs.
+const show = {
+    id: 6771
+}
+
+export default (state = show, {type, payload}) => {
     switch(type){
         case GET_SERIES:
             return {
                 ...state,
-                show: {...payload}
-            }
-        case GET_EPISODES:
-            return {
-                ...state,
-                episodes: {...payload}
+                ...payload
             }
         default:
             return state

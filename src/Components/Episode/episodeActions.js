@@ -1,16 +1,16 @@
 import {http_get} from '../../HttpClient/client'
 
 export const GET_EPISODE_DATA = 'GET_EPISODE_DATA'
-export const RELEASE_EPISODE_DATA = 'RELEASE_EPISODE_DATA'
+export const GET_ALL_EPISODES = 'GET_ALL_EPISODES'
 
 const getEpisodeData = (episode) => ({
     type: GET_EPISODE_DATA,
     payload: episode
 })
 
-const releaseData = () => ({
-    type: RELEASE_EPISODE_DATA,
-    payload: {}
+const getAllEpisodes = (episodes) => ({
+    type: GET_ALL_EPISODES,
+    payload: episodes
 })
 
 export const fetch_episode = (episodeId) => dispatch => {
@@ -19,6 +19,8 @@ export const fetch_episode = (episodeId) => dispatch => {
         .then(suc => dispatch(getEpisodeData(suc.data)))
 }
 
-export const release_episode = () => dispatch => {
-    dispatch(releaseData())
+export const fetchAllEpisodes = (showId) => dispatch => {
+    const episodes = `shows/${showId}/episodes`
+    http_get(episodes)
+        .then(suc => dispatch(getAllEpisodes(suc.data)))
 }

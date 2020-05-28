@@ -1,17 +1,19 @@
 import { connect } from 'react-redux'
 import SeriesView from './SeriesView'
 import {fetch_series} from './seriesAction'
+import {fetchAllEpisodes} from '../Episode/episodeActions'
 
 const mapStateToProps = state => {
     return {
-        series: state.series.show || {},
-        episodes: state.series.episodes || {},
+        series: state.series || {},
+        episodes: state.episode || {},
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetch_series:(showId) => {dispatch(fetch_series(showId))}
+        fetch_series:(showId) => {dispatch(fetch_series(showId))},
+        fetchAllEpisodes:(showId) => {dispatch(fetchAllEpisodes(showId))}
     }
 }
 

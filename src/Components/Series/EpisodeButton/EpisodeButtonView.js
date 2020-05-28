@@ -4,7 +4,7 @@ import './episodeViewButton.css'
 
 const EpisodeButtonView = ({episode}) => {
     return(
-            <Link to={"/episode/"+ episode.id}><button type="submit" className="episodeButton">{episode.name}</button></Link>
+            <Link key={episode.id} to={"/episode/"+ episode.id}><button className="episodeButton"><div className="buttonText">{episode.name}</div></button></Link>
            
     )
 }
