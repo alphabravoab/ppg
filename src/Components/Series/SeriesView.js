@@ -1,13 +1,15 @@
 import React, { useEffect } from 'react'
 import ReactHtmlParser from 'react-html-parser'
-import EpisodeButton from './EpisodeButton'
+import { useParams } from 'react-router-dom'
+import SelectionButton from '../SelectionButton'
 import './seriesView.css'
 
 const Series = ({series, episodes, fetchAllEpisodes, fetch_series}) => {
-    const { summary, image, name, genres, id } = series
+    const { summary, image, name, genres } = series
+    const { id } = useParams()
     useEffect(() => {
-        fetch_series(id)
-        fetchAllEpisodes(id)
+            fetch_series(id)
+            fetchAllEpisodes(id)
       },[fetch_series, fetchAllEpisodes, id]);
     
     return(
@@ -21,7 +23,7 @@ const Series = ({series, episodes, fetchAllEpisodes, fetch_series}) => {
                
            </div>
         <div>
-            {Object.values(episodes).map(episode=> <EpisodeButton key={episode.id} episode={episode} />)}
+            {Object.values(episodes).map(episode=> <SelectionButton key={episode.id} episode={episode} link={"/episode/"} />)}
         </div>
         </div>
     )
