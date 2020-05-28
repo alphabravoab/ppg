@@ -14,13 +14,17 @@ const getAllEpisodes = (episodes) => ({
 })
 
 export const fetch_episode = (episodeId) => dispatch => {
-    const endpoint = `episodes/${episodeId}`
-    http_get(endpoint)
-        .then(suc => dispatch(getEpisodeData(suc.data)))
+    if(episodeId !== undefined) {
+        const endpoint = `episodes/${episodeId}`
+        http_get(endpoint)
+            .then(suc => dispatch(getEpisodeData(suc.data)))
+    }
 }
 
 export const fetchAllEpisodes = (showId) => dispatch => {
-    const episodes = `shows/${showId}/episodes`
-    http_get(episodes)
-        .then(suc => dispatch(getAllEpisodes(suc.data)))
+    if(showId !== undefined) {
+        const episodes = `shows/${showId}/episodes`
+        http_get(episodes)
+            .then(suc => dispatch(getAllEpisodes(suc.data)))
+    }
 }

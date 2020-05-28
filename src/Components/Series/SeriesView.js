@@ -1,18 +1,25 @@
 import React, { useEffect } from 'react'
 import ReactHtmlParser from 'react-html-parser'
-import EpisodeButton from './EpisodeButton'
+import { useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import SelectionButton from '../SelectionButton'
+import search from '../../images/search.png'
 import './seriesView.css'
 
 const Series = ({series, episodes, fetchAllEpisodes, fetch_series}) => {
-    const { summary, image, name, genres, id } = series
+    const { summary, image, name, genres } = series
+    const { id } = useParams()
     useEffect(() => {
-        fetch_series(id)
-        fetchAllEpisodes(id)
+            fetch_series(id)
+            fetchAllEpisodes(id)
       },[fetch_series, fetchAllEpisodes, id]);
     
     return(
         <div>
-           <div className="title">{name}</div> 
+           <div className="title">
+               <div>{name}</div>
+               <div><Link to={"/search"}><img className="searchButton" src={search} alt="search" /></Link></div>
+           </div> 
            {image && <img className="episodeImage" src={image.original} alt={name} />}
            <div className="summary">{ReactHtmlParser(summary)}</div>
            <div>
@@ -21,7 +28,7 @@ const Series = ({series, episodes, fetchAllEpisodes, fetch_series}) => {
                
            </div>
         <div>
-            {Object.values(episodes).map(episode=> <EpisodeButton key={episode.id} episode={episode} />)}
+            {Object.values(episodes).map(episode=> <SelectionButton key={episode.id} episode={episode} link={"/episode/"} />)}
         </div>
         </div>
     )
