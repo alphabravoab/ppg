@@ -1,6 +1,7 @@
 import EpisodeView from './EpisodeView'
 import { connect } from 'react-redux'
-import {fetch_episode} from './episodeActions'
+import { fetch_episode, fetchAllEpisodes } from './episodeActions'
+import episodeReducer from './episodeReducer'
 
 const mapStateToProps = state => {
     return {
@@ -15,4 +16,4 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(EpisodeView)
-
+export { fetch_episode, episodeReducer, fetchAllEpisodes } 

@@ -1,4 +1,4 @@
-import {http_get} from '../../HttpClient/client'
+import { http_get } from '../../HttpClient/client'
 
 export const GET_EPISODE_DATA = 'GET_EPISODE_DATA'
 export const GET_ALL_EPISODES = 'GET_ALL_EPISODES'

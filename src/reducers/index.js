@@ -1,8 +1,10 @@
 
-import series from '../Components/Series/seriesReducer'
-import episode from '../Components/Episode/episodeReducer'
-import search from '../Components/Search/searchReducer'
+import { seriesReducer } from '../Components/Series/'
+import { episodeReducer } from '../Components/Episode/'
+import { searchReducer } from '../Components/Search/'
 
 export default {
-  series, episode, search
+  series: seriesReducer,
+  episode: episodeReducer,
+  search: searchReducer
 }

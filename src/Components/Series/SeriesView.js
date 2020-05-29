@@ -6,13 +6,13 @@ import SelectionButton from '../SelectionButton'
 import search from '../../images/search.png'
 import './seriesView.css'
 
-const Series = ({series, episodes, fetchAllEpisodes, fetch_series}) => {
+const Series = ({series, episodes, fetchAllEpisodes, fetchSeries}) => {
     const { summary, image, name, genres } = series
     const { id } = useParams()
     useEffect(() => {
-            fetch_series(id)
+            fetchSeries(id)
             fetchAllEpisodes(id)
-      },[fetch_series, fetchAllEpisodes, id]);
+      },[fetchSeries, fetchAllEpisodes, id]);
     
     return(
         <div>

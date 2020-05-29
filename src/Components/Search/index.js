@@ -1,11 +1,11 @@
 import SearchView from './SearchView'
 import { connect } from 'react-redux'
 import { searchShows } from './searchActions'
+import searchReducer from './searchReducer'
 
 const mapStateToProps = state => {
     return {
-        searchResults: state.search || {},
-        
+        searchResults: state.search || {},     
     }
 }
 
@@ -17,3 +17,4 @@ const mapDispatchToProps = dispatch => {
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchView)
+export { searchReducer }

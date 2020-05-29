@@ -1,6 +1,6 @@
 import { GET_EPISODE_DATA, GET_ALL_EPISODES } from './episodeActions'
 
-export default (state = {}, {type, payload}) => {
+const episodeReducer =  (state = {}, {type, payload}) => {
    
     switch(type){
         case GET_EPISODE_DATA:
@@ -17,3 +17,5 @@ export default (state = {}, {type, payload}) => {
             return state
     }
 }
+
+export default episodeReducer

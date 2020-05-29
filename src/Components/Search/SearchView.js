@@ -11,9 +11,9 @@ const SearchView = ({searchResults, searchShows}) => {
         const searchTerm = data.showName.replace(/ /g,"%20")
         searchShows(searchTerm)
     }
+
     return(
         <div>
-            
             <form className="form" onSubmit={handleSubmit(onSubmit)}>
                 <input name="showName" ref={register} />
                 <button type="submit">Search</button>

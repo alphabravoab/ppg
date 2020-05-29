@@ -1,5 +1,6 @@
 import React from 'react'
 
+// SVG for the backbutton made in figma
 const BackButton = () => {
     return(
         <svg width="10" height="20" viewBox="0 0 40 81" fill="#fff" xmlns="http://www.w3.org/2000/svg">
