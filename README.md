@@ -3,17 +3,17 @@ This project allows you to get information about your favorite shows.
 Yeah it was made for an assement for real developers the only interesting part is the way 
 The only real interesting part is how I set up the components. It was made with the re-ducks pattern
 where every component is it's own map and in the map you can find the redux, actions and views. (and smaller components if it is only used in that part) all the exports of that component are in the index so if internal logic changes other components shouldn't feel the effect (or atleast minimalistic)
-[https://medium.com/@rohan.dhar1992/scaling-redux-applications-with-reducks-bff0ab69601c](read this medium article for more)
+[https://medium.com/@rohan.dhar1992/scaling-redux-applications-with-reducks-bff0ab69601c]
 
 If you want to see it live follow this link.
-[https://showwatcher.netlify.app] (link to the live netlify app)
+[https://showwatcher.netlify.app] 
 
 
 ### `npm start`
 
 To run the app local just run npm start as is basic with create-react-apps(cra or crap). 
 For developers that are learning please never use cra again. Parcel is a lot faster and gives way less overhead your folders.
-See https://github.com/alphabravoab/react-parcel 
+See [https://github.com/alphabravoab/react-parcel]
 
 If you got this running just visit [http://localhost:3000](http://localhost:3000) in the the browser.
 
