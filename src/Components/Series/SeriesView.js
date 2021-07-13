@@ -27,7 +27,7 @@ const Series = ({series, episodes, fetchAllEpisodes, fetchSeries}) => {
                <div className="genreList">{genres && genres.map(genre => <div key={genre} className="genre">{genre}</div>)}</div>
                
            </div>
-        <div>
+        <div className="episodes">
             {Object.values(episodes).map(episode=> <SelectionButton key={episode.id} episode={episode} link={"/episode/"} />)}
         </div>
         </div>

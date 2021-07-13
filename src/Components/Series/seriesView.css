@@ -64,3 +64,9 @@
         justify-content: flex-start;
     }
 }
+
+.episodes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10%;
+}
